@@ -91,6 +91,17 @@ class Intern
             // there are no errors
             $query = "INSERT INTO interns (name, email, phone_no, link_to_portfolio, link_to_cv, years_of_experience, interest, current_location, employment_status, about, timestamp)
                 VALUES('" . $fullname . "', '" . $email . "', '" . $phoneNo . "', '" . $linkPort . "', '" . $linkCV . "', '" . $exp . "', '" . $interest . "', '" . $location . "', '" . $empStatus . "', '" . $about . "', '" . $date . "' ) ";
+            
+            // **** ce0la's send user email upon signup code ****
+
+            if(isset($email)){
+                mail("$email", "Welcome to HNGi7!", "Dear $fullname, </br> Thank you for signing up for the seventh edition of the hotels.ng internship. You will start receiving mails from us to keep you updated with latest developments about the internship. \n
+                You will also get links to tips and articles that can help you survive the internship. &#128578 </br> Welcome on board! Thank you. </br> HNGi7 team!");
+            } else{
+                echo "<script>alert('Oops! Welcome message could not be sent!')</script>";
+            }
+            
+            // **** end ce0la's code ****
 
             $res = $database->query($query);
             $count = $database->affected_rows();

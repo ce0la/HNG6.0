@@ -27,7 +27,7 @@ function sendNewAdminMail($email, $subject, $body)
     $mail->Port       = 587;                                    // TCP port to connect to
 
     //Recipients
-    $mail->setFrom('alisataylorm.m@gmail.com', 'HNG SUPPER ADMIN');
+    $mail->setFrom('alisataylorm.m@gmail.com', 'HNG SUPER ADMIN');
     $mail->addAddress("$email");     // Add a recipient
     // $mail->addAddress('ellen@example.com');               // Name is optional
     $mail->addReplyTo('no-reply@gmail.com', 'No-Reply');
